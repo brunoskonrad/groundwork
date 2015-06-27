@@ -34,14 +34,14 @@ body {
  *
  */
 .btn {
-  border-radius: 4px;
-  display: inline-block;
-  text-transform: uppercase;
   background-color: #F36E09;
   color: #ffffff;
   padding: 12px;
   padding-bottom: 8px;
-  border-bottom: 4px solid transparent; }
+  border-bottom: 4px solid transparent;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase; }
   .btn:hover {
     cursor: pointer;
     background-color: #e96a09;
