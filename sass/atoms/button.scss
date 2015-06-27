@@ -1,0 +1,29 @@
+$offset: 12px;
+
+.btn {
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+
+  @include ground-background-color($color-orange, $offset);
+
+  &--danger {
+    @include ground-background-color($color-red, $offset);
+  }
+  &--ok {
+    @include ground-background-color($color-green, $offset);
+  }
+
+  &--disabled {
+    background-color: $color-gray;
+    cursor: not-allowed;
+    border-bottom: 0px;
+
+    &:hover {
+      background-color: $color-gray;
+      cursor: not-allowed;
+      border-bottom: 0px;
+    }
+  }
+
+}

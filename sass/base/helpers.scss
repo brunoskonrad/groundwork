@@ -1,0 +1,32 @@
+/**
+ *
+ */
+@function text-color-to-background($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+
+/**
+ *
+ */
+@mixin ground-background-color($color, $bottom) {
+  $offset: 4px;
+
+  background-color: $color;
+  color: text-color-to-background($color);
+  padding: $bottom;
+  padding-bottom: $bottom - $offset;
+  border-bottom: $offset solid rgba(0, 0, 0, 0);
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($color, 2%);
+    border-bottom: $offset solid darken($color, 5%);
+  }
+  &:active {
+    background-color: darken($color, 5%);
+  }
+}
