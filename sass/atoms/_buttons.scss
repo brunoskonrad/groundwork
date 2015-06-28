@@ -1,0 +1,47 @@
+$offset: 12px;
+
+@mixin button-background-color($color, $bottom) {
+  $offset: 4px;
+
+  background-color: $color;
+  color: text-color-to-background($color);
+  padding: $bottom;
+  padding-bottom: $bottom - $offset;
+  border-bottom: $offset solid rgba(0, 0, 0, 0);
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($color, 2%);
+    border-bottom: $offset solid darken($color, 5%);
+  }
+  &:active {
+    background-color: darken($color, 5%);
+  }
+}
+
+.btn {
+  @include button-background-color($color-orange, $offset);
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+
+  &--danger {
+    @include button-background-color($color-red, $offset);
+  }
+  &--ok {
+    @include button-background-color($color-green, $offset);
+  }
+
+  /* NOTE I didn't like this `disabled` code. Should check in the future */
+  &--disabled {
+    background-color: $color-gray;
+    cursor: not-allowed;
+    border-bottom: 0px;
+
+    &:hover {
+      background-color: $color-gray;
+      cursor: not-allowed;
+      border-bottom: 0px;
+    }
+  }
+}

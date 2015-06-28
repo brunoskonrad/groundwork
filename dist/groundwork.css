@@ -30,9 +30,6 @@ body {
 /**
  *
  */
-/**
- *
- */
 .btn {
   background-color: #F36E09;
   color: #ffffff;
@@ -41,7 +38,8 @@ body {
   border-bottom: 4px solid transparent;
   border-radius: 4px;
   display: inline-block;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  /* NOTE I didn't like this `disabled` code. Should check in the future */ }
   .btn:hover {
     cursor: pointer;
     background-color: #e96a09;
