@@ -25,7 +25,8 @@ time, mark, audio, video {
   box-sizing: border-box; }
 
 body {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px; }
 
 /**
  *
@@ -39,6 +40,7 @@ body {
   border-radius: 4px;
   display: inline-block;
   text-transform: uppercase;
+  text-align: center;
   /* NOTE I didn't like this `disabled` code. Should check in the future */ }
   .btn:hover {
     cursor: pointer;
@@ -78,3 +80,7 @@ body {
       background-color: #D9D7D5;
       cursor: not-allowed;
       border-bottom: 0px; }
+  .btn--fill {
+    width: 100%; }
+  .btn--fat {
+    padding: 20px; }

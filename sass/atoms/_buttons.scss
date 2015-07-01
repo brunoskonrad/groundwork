@@ -1,18 +1,18 @@
 $offset: 12px;
 
-@mixin button-background-color($color, $bottom) {
-  $offset: 4px;
+@mixin button-background-color($color) {
+  $inner_offset: 4px;
 
   background-color: $color;
   color: text-color-to-background($color);
-  padding: $bottom;
-  padding-bottom: $bottom - $offset;
-  border-bottom: $offset solid rgba(0, 0, 0, 0);
+  padding: $offset;
+  padding-bottom: $offset - $inner_offset;
+  border-bottom: $inner_offset solid rgba(0, 0, 0, 0);
 
   &:hover {
     cursor: pointer;
     background-color: darken($color, 2%);
-    border-bottom: $offset solid darken($color, 5%);
+    border-bottom: $inner_offset solid darken($color, 5%);
   }
   &:active {
     background-color: darken($color, 5%);
@@ -20,16 +20,17 @@ $offset: 12px;
 }
 
 .btn {
-  @include button-background-color($color-orange, $offset);
+  @include button-background-color($color-orange);
   border-radius: 4px;
   display: inline-block;
   text-transform: uppercase;
+  text-align: center;
 
   &--danger {
-    @include button-background-color($color-red, $offset);
+    @include button-background-color($color-red);
   }
   &--ok {
-    @include button-background-color($color-green, $offset);
+    @include button-background-color($color-green);
   }
 
   /* NOTE I didn't like this `disabled` code. Should check in the future */
@@ -43,5 +44,13 @@ $offset: 12px;
       cursor: not-allowed;
       border-bottom: 0px;
     }
+  }
+
+  &--fill {
+    width: 100%;
+  }
+
+  &--fat {
+    padding: $offset + 8px;
   }
 }
